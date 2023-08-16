@@ -1,5 +1,5 @@
 import {styled} from '@nextui-org/react';
 
-export const WrapperLayout = styled('div', {
+export const  WrapperLayout = styled('div', {
    display: 'flex',
 });

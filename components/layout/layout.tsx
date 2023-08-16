@@ -31,3 +31,7 @@ export const Layout = ({children}: Props) => {
       </SidebarContext.Provider>
    );
 };
+
+export async function getServerSideProps() {
+   
+}

@@ -11,7 +11,7 @@ interface Props {
    href?: string;
 }
 
-export const SidebarItem = ({icon, title, isActive, href = ''}: Props) => {
+export const SidebarItem = ({icon, title, isActive, href = 'w'}: Props) => {
    const {collapsed, setCollapsed} = useSidebarContext();
 
    const handleClick = () => {

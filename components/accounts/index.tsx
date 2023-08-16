@@ -48,7 +48,7 @@ export const Accounts = () => {
 
          <Text h3>All Accounts</Text>
          <Flex
-            css={{gap: '$8'}}
+            // css={{gap: '$8'}}
             align={'center'}
             justify={'between'}
             wrap={'wrap'}

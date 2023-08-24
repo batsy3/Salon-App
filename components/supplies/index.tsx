@@ -12,8 +12,16 @@ import {SettingsIcon} from '../icons/sidebar/settings-icon';
 import {Flex} from '../styles/flex';
 import {TableWrapper} from '../table/table';
 import {AddUser} from './add-user';
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { ICategory } from '../../interfaces/supplies.interface';
+import { db } from '../../pages/api/firestore';
 
-export const Accounts = () => {
+const getStaticProps: GetStaticProps<{ props: ICategory }> = async () => {
+   await db.collection("Category").getAll()
+   return 
+} 
+
+export const Supplies = () => {
    return (
       <Flex
          css={{
@@ -31,19 +39,19 @@ export const Accounts = () => {
             <Crumb>
                <HouseIcon />
                <Link href={'/'}>
-                  <CrumbLink href="#">Home</CrumbLink>
+                  <CrumbLink href="/">Home</CrumbLink>
                </Link>
                <Text>/</Text>
             </Crumb>
 
             <Crumb>
                <UsersIcon />
-               <CrumbLink href="#">Users</CrumbLink>
+               <CrumbLink href="/supplies">Supplies</CrumbLink>
                <Text>/</Text>
             </Crumb>
-            <Crumb>
+            {/* <Crumb>
                <CrumbLink href="#">List</CrumbLink>
-            </Crumb>
+            </Crumb> */}
          </Breadcrumbs>
 
          <Text h3>All Accounts</Text>
@@ -82,3 +90,4 @@ export const Accounts = () => {
       </Flex>
    );
 };
+

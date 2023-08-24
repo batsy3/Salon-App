@@ -1,14 +1,13 @@
 "use client";
-// import * as admin from "firebase-admin";
-// admin.initializeApp();
 
 
 import type { NextPage } from "next";
 import { Content } from "../components/home/content";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { initializeApp } from "firebase-admin";
+import { getApp, getApps, initializeApp } from "firebase/app";
 import { CircularProgress } from "@mui/material";
+
 
 const Home: NextPage = () => {
   const router = useRouter();

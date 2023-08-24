@@ -22,14 +22,8 @@ import { TableWrapper } from "../table/table";
 import { AddUser } from "./add-user";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { ICategory } from "../../interfaces/supplies.interface";
-import { db } from "../../pages/api/firestore";
 
-const getStaticProps: GetStaticProps<ICategory> = async () => {
-  const res = await db.collection("Category").get();
-  return { props: { categories: res } };
-};
-
-export const Supplies = ({ categories }) => {
+ export const SuppliesComponent = ({ categories }) => {
   return (
     <Flex
       css={{
@@ -62,7 +56,7 @@ export const Supplies = ({ categories }) => {
             </Crumb> */}
       </Breadcrumbs>
 
-      <Text h3>All Accounts</Text>
+      <Text h3>Inventory</Text>
       <Flex
         //   css={{gap: '$8'}}
         align={"center"}
@@ -88,7 +82,7 @@ export const Supplies = ({ categories }) => {
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
               {/* {categories?.map((item, index) => (
-                <DropdownItem key={index}>{item.name}</DropdownItem>;
+                <DropdownItem key={index}>{item.name}</DropdownItem>
               ))} */}
             </DropdownMenu>
           </Dropdown>
@@ -105,3 +99,5 @@ export const Supplies = ({ categories }) => {
     </Flex>
   );
 };
+
+

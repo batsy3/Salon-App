@@ -3,9 +3,9 @@ import {
   ICategory,
   ISupply,
   ISupplyDTO,
-} from "../../../interfaces/supplies.interface";
-import { db } from "../firestore";
+} from "../interfaces/supplies.interface";
 import { Filter } from "firebase-admin/firestore";
+import { db } from "../firestore";
 
 const supplyRef = db.collection("supplies");
 const categoryRef = db.collection("category");
